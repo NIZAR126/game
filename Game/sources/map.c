@@ -367,13 +367,16 @@ void updatePlayer(Input *input){
         if(player.score > readScore("../score/score.txt"))
             saveScore("../score/score.txt");
         input->jouer = 0;
-        initializePlayer();
+        drawGameOver();
+        SDL_Delay(7000);
     }
 
     //Pour la mort
     if(y2*TILE_SIZE > SCREEN_HEIGHT){
         player.alive = 0;
         input->jouer = 0;
+        drawGameOver();
+        SDL_Delay(7000);
         initializePlayer();
     }
 

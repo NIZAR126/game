@@ -1,5 +1,5 @@
 #include "../headers/prototypes.h"
-
+ //this is a comment test 
 
 void drawGame(void){
     // Affiche le background � 0,0
@@ -21,7 +21,7 @@ void drawMenu(void){
     //background
     drawImage(getBackground(), 0, 0);
 
-    //tete girafe
+    //tete Ninja
     SDL_Texture *tete = loadImage("../sprites/tete.png");
     drawImage(tete, 0, 226);
 
@@ -41,6 +41,19 @@ void drawMenu(void){
     SDL_Texture *jouer = loadImage("../sprites/jouer.png");
     drawImage(jouer, 180, 240);
 
+    // Affiche l'�cran
+    SDL_RenderPresent(getrenderer());
+
+    SDL_Delay(1);
+}
+
+void drawGameOver(void){
+    //background
+    drawImage(getBackground(),0,0);
+
+    // image game over
+    SDL_Texture* go = loadImage("../sprites/gameOver.png");
+    drawImage(go,0,0);
     // Affiche l'�cran
     SDL_RenderPresent(getrenderer());
 
